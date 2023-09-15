@@ -2,8 +2,15 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: black;
-  color: white;
+  background-color: rgba(0, 0, 0, 0.95);
+  color: darkgray;
+  font-weight: 100;
+  line-height: 150%;
+}
+
+.item img {
+  width: 4rem;
+  height: 4rem;
 }
 
 nav {
@@ -16,7 +23,11 @@ nav {
   padding: 1.5rem;
 }
 
-nav > h1:hover {
+nav h1 {
+  padding-left: 5rem;
+}
+nav h1:hover {
+  cursor: pointer;
   opacity: 80%;
 }
 .container {
@@ -26,17 +37,28 @@ nav > h1:hover {
   align-items: stretch;
   justify-items: stretch;
   margin: 2rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
   gap: 2rem;
 }
 
 .item {
-  padding: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5rem;
   gap: 1rem;
-  border: 1px solid rgba(255, 217, 0, 0.5);
+  border: 1px solid rgba(255, 217, 0, 0.4);
   border-radius: 0.5rem;
 }
 
 .item:hover {
   border: 1px solid gold;
   transition: all 0.2s ease-in-out;
+}
+
+.item h2 {
+  color: white;
+  font-weight: 500;
+  font-size: 1.5rem;
 }
