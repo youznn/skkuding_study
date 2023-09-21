@@ -50,6 +50,7 @@ nav h1:hover {
   gap: 1rem;
   border: 1px solid rgba(255, 217, 0, 0.4);
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 .item:hover {

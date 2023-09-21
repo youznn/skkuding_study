@@ -168,6 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tr.append(td1, td2);
   });
 
+  //자식요소로 추가해주기
   tableWrapper.append(table);
   imgWrapper.append(img);
   main.append(name, tableWrapper);

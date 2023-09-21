@@ -142,7 +142,7 @@ const data = [
 ];
 
 const pokemonMap = new Map(); //맵 만들기
-data.forEach((pokemon) => pokemonMap.set(pokemon.name, { ...pokemon })); //포켓몬 맵
+data.forEach((pokemon) => pokemonMap.set(pokemon.name, { ...pokemon })); //포켓몬 맵 만들기
 
 document.addEventListener("DOMContentLoaded", () => {
   //에러떠서 추가
