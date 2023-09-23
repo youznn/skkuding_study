@@ -31,4 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   tableWrapper.append(table);
   imgWrapper.append(img);
   main.append(name, tableWrapper);
+
+  //title 변경까지
+  document.title = `${pokemon.name}`;
 });
