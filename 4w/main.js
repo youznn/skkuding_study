@@ -153,7 +153,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let item = document.createElement("div"); //item 블럭 만들기
     item.className = "item";
     item.onclick = () => {
-      localStorage.setItem("pokemon", currentindex);
+      localStorage.setItem("pokemon", JSON.stringify(data[currentindex - 1])); //currentindex 대신에 객체 전달하도록 바꿈
+      localStorage.setItem("index", currentindex); //img src 링크 위해 index도 전달
       window.location.href = "./pokemon/"; //a태그 대신에 onclick 이벤트
     };
     let imgWrapper = document.createElement("div");
