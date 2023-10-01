@@ -1,5 +1,15 @@
-"use strict";
-const data = [
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var data = [
     {
         name: "Bulbasaur",
         height: "7",
@@ -141,32 +151,32 @@ const data = [
         speed: "45",
     },
 ];
-const pokemonMap = new Map(); //맵 만들기
-data.forEach((pokemon) => pokemonMap.set(pokemon.name, Object.assign({}, pokemon))); //포켓몬 맵 만들기
-const container = document.querySelector(".container"); //container 요소 찾아서 가져오기
-let index = 1;
-pokemonMap.forEach((value, key, map) => {
-    let currentindex = index;
-    let item = document.createElement("div"); //item 블럭 만들기
+var pokemonMap = new Map(); //맵 만들기
+data.forEach(function (pokemon) { return pokemonMap.set(pokemon.name, __assign({}, pokemon)); }); //포켓몬 맵 만들기
+var container = document.querySelector(".container"); //container 요소 찾아서 가져오기
+var index = 1;
+pokemonMap.forEach(function (value, key, map) {
+    var currentindex = index;
+    var item = document.createElement("div"); //item 블럭 만들기
     item.className = "item";
-    item.onclick = () => {
+    item.onclick = function () {
         localStorage.setItem("pokemon", JSON.stringify(data[currentindex - 1])); //currentindex 대신에 객체 전달하도록 바꿈
         localStorage.setItem("index", currentindex.toString()); //img src 링크 위해 index도 전달
         window.location.href = "./pokemon/"; //a태그 대신에 onclick 이벤트
     };
-    let imgWrapper = document.createElement("div");
-    let pokeimg = document.createElement("img");
-    pokeimg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${index}.png`;
-    pokeimg.alt = `${key}`;
-    let infowrapper = document.createElement("div");
-    let name = document.createElement("h2");
-    let height = document.createElement("p");
-    let weight = document.createElement("p");
-    let types = document.createElement("p");
-    name.innerHTML = `${key}`;
-    height.innerHTML = `height: ${value.height}dm`;
-    weight.innerHTML = `weight: ${value.weight}hg`;
-    types.innerHTML = `types: ${value.types}`;
+    var imgWrapper = document.createElement("div");
+    var pokeimg = document.createElement("img");
+    pokeimg.src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/".concat(index, ".png");
+    pokeimg.alt = "".concat(key);
+    var infowrapper = document.createElement("div");
+    var name = document.createElement("h2");
+    var height = document.createElement("p");
+    var weight = document.createElement("p");
+    var types = document.createElement("p");
+    name.innerHTML = "".concat(key);
+    height.innerHTML = "height: ".concat(value.height, "dm");
+    weight.innerHTML = "weight: ".concat(value.weight, "hg");
+    types.innerHTML = "types: ".concat(value.types);
     item.append(imgWrapper, infowrapper);
     imgWrapper.append(pokeimg);
     infowrapper.append(name, height, weight, types);
