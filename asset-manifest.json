@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/skkuding_study/pokemon/static/css/main.b0d2c962.css",
-    "main.js": "/skkuding_study/pokemon/static/js/main.0ce4972b.js",
-    "index.html": "/skkuding_study/pokemon/index.html",
-    "main.b0d2c962.css.map": "/skkuding_study/pokemon/static/css/main.b0d2c962.css.map",
-    "main.0ce4972b.js.map": "/skkuding_study/pokemon/static/js/main.0ce4972b.js.map"
+    "main.css": "/skkuding_study/static/css/main.b0d2c962.css",
+    "main.js": "/skkuding_study/static/js/main.0ce4972b.js",
+    "index.html": "/skkuding_study/index.html",
+    "main.b0d2c962.css.map": "/skkuding_study/static/css/main.b0d2c962.css.map",
+    "main.0ce4972b.js.map": "/skkuding_study/static/js/main.0ce4972b.js.map"
   },
   "entrypoints": [
     "static/css/main.b0d2c962.css",
