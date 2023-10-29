@@ -7,7 +7,7 @@ import DetailPages from "./pages/DetailPages";
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className={`${styles.app} ${resetStyles.reset}`}>
         <Routes>
           <Route path="/" element={<MainPage />} />

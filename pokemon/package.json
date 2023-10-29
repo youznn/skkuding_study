@@ -27,7 +27,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://youznn.github.io/skkuding_study/pokemon/",
+  "homepage": "https://youznn.github.io/skkuding_study/",
   "eslintConfig": {
     "extends": [
       "react-app",
