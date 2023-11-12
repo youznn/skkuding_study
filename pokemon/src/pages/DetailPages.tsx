@@ -15,8 +15,7 @@ function DetailPages() {
             </h1>
           </Link>
         </nav>
-        <main className="flex flex-col justify-center items-center gap-4 p-4">
-          <div className="border border-solid border-yellow-400 rounded-full overflow-hidden"></div>
+        <main>
           <DetailTable index={id} />
         </main>
       </div>

@@ -71,13 +71,17 @@ function DetailTable({ index }: any) {
   ];
 
   return (
-    <div>
-      <img
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
-          pokemon.index + 1
-        }.png`}
-        alt={pokemon.name}
-      />
+    <div className="flex flex-col justify-center items-center gap-4 p-4">
+      <div className="border border-solid border-yellow-400 rounded-full overflow-hidden">
+        {" "}
+        <img
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
+            pokemon.index + 1
+          }.png`}
+          alt={pokemon.name}
+        />
+      </div>
+
       <h1 className="text-3xl font-medium">{pokemon.name}</h1>
       <div className="border border-solid border-yellow-400/[0.4] rounded-lg p-8">
         <table>
