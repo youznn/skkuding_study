@@ -20,7 +20,7 @@ const GET_POKEMONS = gql`
           name
         }
       }
-      hp: pokemon_v2_pokemonstats(where: { stat_id: { _eq: 2 } }) {
+      hp: pokemon_v2_pokemonstats(where: { stat_id: { _eq: 1 } }) {
         base_stat
       }
       attack: pokemon_v2_pokemonstats(where: { stat_id: { _eq: 2 } }) {
@@ -50,74 +50,41 @@ function DetailTable({ index }: any) {
 
   const pokemon = data && data.pokemondata && data.pokemondata[index];
 
+  const pokemonstats = [
+    { label: "Height", value: `${pokemon.height} dm` },
+    { label: "Weight", value: `${pokemon.weight} hg` },
+    {
+      label: "Types",
+      value: pokemon.types.map((type: any) => type.type.name).join(", "),
+    },
+    { label: "Base Experience", value: pokemon.base_experience },
+    {
+      label: "Abilities",
+      value: pokemon.abilities
+        .map((ability: any) => ability.ability.name)
+        .join(", "),
+    },
+    { label: "HP", value: pokemon.hp[0].base_stat },
+    { label: "Attack", value: pokemon.attack[0].base_stat },
+    { label: "Defense", value: pokemon.defense[0].base_stat },
+    { label: "Special-attack", value: pokemon.special_attack[0].base_stat },
+    { label: "Special-defense", value: pokemon.special_defense[0].base_stat },
+    { label: "Speed", value: pokemon.speed[0].base_stat },
+  ];
+
   return (
-    <div className={styles.table_wrapper}>
+    <div className="border border-solid border-yellow-400/[0.4] rounded-lg p-8">
       <table>
         <tbody>
-          <tr className={styles.tr}>
-            <td className={styles.firstdata}>Height</td>
-            <td className={styles.seconddata}>{pokemon.height} dm</td>
-          </tr>
-          <tr className={styles.tr}>
-            <td className={styles.firstdata}>Weight</td>
-            <td className={styles.seconddata}> {pokemon.weight} hg</td>
-          </tr>
-          <tr className={styles.tr}>
-            <td className={styles.firstdata}>Types</td>
-            <td className={styles.seconddata}>
-              {pokemon.types.map((type: any, index: number) => (
-                <React.Fragment key={index}>
-                  {index > 0 && ", "} {type.type.name}
-                </React.Fragment>
-              ))}
-            </td>
-          </tr>
-          <tr className={styles.tr}>
-            <td className={styles.firstdata}>Base Experience</td>
-            <td className={styles.seconddata}>{pokemon.base_experience}</td>
-          </tr>
-          <tr className={styles.tr}>
-            <td className={styles.firstdata}>Abilites</td>
-            <td className={styles.seconddata}>
-              {pokemon.abilities.map((ability: any, index: number) => (
-                <React.Fragment key={index}>
-                  {index > 0 && ", "} {ability.ability.name}
-                </React.Fragment>
-              ))}
-            </td>
-          </tr>
-          <tr className={styles.tr}>
-            <td className={styles.firstdata}>HP</td>
-            <td className={styles.seconddata}>{pokemon.hp[0].base_stat}</td>
-          </tr>
-          <tr className={styles.tr}>
-            <td className={styles.firstdata}>Attack</td>
-            <td className={styles.seconddata}>
-              {pokemon.attack[0].base_stat}{" "}
-            </td>
-          </tr>
-          <tr className={styles.tr}>
-            <td className={styles.firstdata}>Defense</td>
-            <td className={styles.seconddata}>
-              {pokemon.defense[0].base_stat}{" "}
-            </td>
-          </tr>
-          <tr className={styles.tr}>
-            <td className={styles.firstdata}>Special-attack</td>
-            <td className={styles.seconddata}>
-              {pokemon.special_attack[0].base_stat}
-            </td>
-          </tr>
-          <tr className={styles.tr}>
-            <td className={styles.firstdata}>Special-defense</td>
-            <td className={styles.seconddata}>
-              {pokemon.special_defense[0].base_stat}
-            </td>
-          </tr>
-          <tr className={styles.tr}>
-            <td className={styles.firstdata}>Speed</td>
-            <td className={styles.seconddata}>{pokemon.speed[0].base_stat} </td>
-          </tr>
+          {pokemonstats.map((item, index) => (
+            <tr
+              key={index}
+              className="border-b border-solid border-yellow-400/[0.4]"
+            >
+              <td className="p-2 font-bold text-white">{item.label}</td>
+              <td className="p-2 text-right">{item.value}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

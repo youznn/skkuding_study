@@ -1,7 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import styles from "../styles/App.module.css";
 import axios from "axios";
+import "../styles/App.css";
 
 interface Props {
   index: number;
@@ -24,17 +23,18 @@ const PokemonItem: FC<Props> = ({ index }) => {
   return (
     <div>
       {pokemon ? (
-        <div className={styles.item}>
+        <div className="flex justify-start items-center p-6 gap-4 border border-solid border-yellow-400/[.4] hover:border-yellow-400 hover: ease-in-out hover:duration-200 rounded-md cursor-pointer">
           <div className="img-wrapper">
             <img
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
                 index + 1
               }.png`}
               alt={pokemon.name}
+              className="w-16 h-16"
             />
           </div>
           <div className="info-wrapper">
-            <h2>{pokemon.name}</h2>
+            <h2 className="text-white font-medium text-2xl">{pokemon.name}</h2>
             <p>height: {pokemon.height}dm</p>
             <p>weight: {pokemon.weight}hg</p>
             <p>
