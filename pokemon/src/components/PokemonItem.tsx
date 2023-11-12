@@ -18,7 +18,7 @@ const PokemonItem: FC<Props> = ({ index }) => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [index]);
 
   return (
     <div>

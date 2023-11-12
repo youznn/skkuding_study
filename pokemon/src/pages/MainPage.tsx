@@ -1,4 +1,3 @@
-import React from "react";
 import PokemonItem from "../components/PokemonItem";
 import { Link } from "react-router-dom";
 import "../styles/App.css";

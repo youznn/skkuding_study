@@ -1,6 +1,4 @@
 import { useQuery, gql } from "@apollo/client";
-import styles from "./styles/Detail.module.css";
-import React from "react";
 
 const GET_POKEMONS = gql`
   query GetPokemons {
@@ -73,20 +71,29 @@ function DetailTable({ index }: any) {
   ];
 
   return (
-    <div className="border border-solid border-yellow-400/[0.4] rounded-lg p-8">
-      <table>
-        <tbody>
-          {pokemonstats.map((item, index) => (
-            <tr
-              key={index}
-              className="border-b border-solid border-yellow-400/[0.4]"
-            >
-              <td className="p-2 font-bold text-white">{item.label}</td>
-              <td className="p-2 text-right">{item.value}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div>
+      <img
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
+          pokemon.index + 1
+        }.png`}
+        alt={pokemon.name}
+      />
+      <h1 className="text-3xl font-medium">{pokemon.name}</h1>
+      <div className="border border-solid border-yellow-400/[0.4] rounded-lg p-8">
+        <table>
+          <tbody>
+            {pokemonstats.map((item, index) => (
+              <tr
+                key={index}
+                className="border-b border-solid border-yellow-400/[0.4]"
+              >
+                <td className="p-2 font-bold text-white">{item.label}</td>
+                <td className="p-2 text-right">{item.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
