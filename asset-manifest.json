@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/skkuding_study/static/css/main.b0d2c962.css",
-    "main.js": "/skkuding_study/static/js/main.2b4f11de.js",
+    "main.css": "/skkuding_study/static/css/main.8184d870.css",
+    "main.js": "/skkuding_study/static/js/main.4117a9c5.js",
     "index.html": "/skkuding_study/index.html",
-    "main.b0d2c962.css.map": "/skkuding_study/static/css/main.b0d2c962.css.map",
-    "main.2b4f11de.js.map": "/skkuding_study/static/js/main.2b4f11de.js.map"
+    "main.8184d870.css.map": "/skkuding_study/static/css/main.8184d870.css.map",
+    "main.4117a9c5.js.map": "/skkuding_study/static/js/main.4117a9c5.js.map"
   },
   "entrypoints": [
-    "static/css/main.b0d2c962.css",
-    "static/js/main.2b4f11de.js"
+    "static/css/main.8184d870.css",
+    "static/js/main.4117a9c5.js"
   ]
 }
