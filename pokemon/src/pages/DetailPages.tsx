@@ -2,7 +2,7 @@ import React from "react";
 import { useParams, Link } from "react-router-dom"; // useParams 추가
 import PokeData from "../data.js";
 import styles from "../styles/Detail.module.css";
-import PokemonTable from "../components/PokemonTable";
+import DetailTable from "../PokemonData";
 
 function DetailPages() {
   const { id } = useParams();
@@ -26,7 +26,7 @@ function DetailPages() {
             />
           </div>
           <h1>{PokeData[pokemon].name}</h1>
-          <PokemonTable index={id} />
+          <DetailTable index={id} />
         </main>
       </div>
     );

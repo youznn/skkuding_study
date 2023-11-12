@@ -1,10 +1,11 @@
 import React from "react";
-import PokeData from "../data.js";
 import PokemonItem from "../components/PokemonItem";
 import styles from "../styles/App.module.css";
-import { Link, Route } from "react-router-dom";
-import DetailPages from "./DetailPages";
+import { Link } from "react-router-dom";
+
 function MainPage() {
+  const numPokemons = 10; // 원하는 포켓몬 수
+
   return (
     <body className={styles.body}>
       <nav className={styles.nav}>
@@ -12,16 +13,9 @@ function MainPage() {
       </nav>
       <main>
         <div className={styles.container}>
-          {PokeData.slice(0, 10).map((pokemon, index) => (
+          {Array.from({ length: numPokemons }, (_, index) => (
             <Link to={`/detail/${index}`} key={index}>
-              <PokemonItem
-                key={index}
-                index={pokemon.index}
-                name={pokemon.name}
-                height={pokemon.height}
-                weight={pokemon.weight}
-                types={pokemon.types}
-              />
+              <PokemonItem index={index} />
             </Link>
           ))}
         </div>
