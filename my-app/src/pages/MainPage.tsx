@@ -2,15 +2,20 @@ import PokemonItem from "../components/PokemonItem";
 import Nav from "../components/Nav";
 import { Link } from "react-router-dom";
 import "../styles/App.css";
-import { useState } from "react";
+import { useEffect } from "react";
 import PageButton from "../components/PageButton";
+import usePageStore from "../datas/page";
+import usePokemonStore from "../datas/PokemonData";
+import axios from "axios";
 
 function MainPage() {
-  const [page, setPage] = useState(0);
+  const { page, setPage } = usePageStore();
+
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const newValue = parseInt(e.target.value, 10);
     setPage(newValue);
   }
+
   return (
     <div>
       <Nav />

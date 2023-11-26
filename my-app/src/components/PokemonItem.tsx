@@ -2,6 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import Img from "./Img";
 import axios from "axios";
 import "../styles/App.css";
+import usePokemonStore from "../datas/PokemonData";
 
 interface Props {
   index: number;
@@ -15,17 +16,8 @@ interface Pokemon {
 }
 
 function PokemonItem({ index }: Props) {
-  const [pokemon, setPokemon] = useState<Pokemon | null>(null);
-  useEffect(() => {
-    axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${index + 1}`)
-      .then((response) => {
-        setPokemon(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [index]);
+  const { pokemons, setPokemons } = usePokemonStore();
+  const pokemon = pokemons[index];
 
   return (
     <div>

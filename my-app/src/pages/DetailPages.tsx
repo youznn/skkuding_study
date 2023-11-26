@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom"; // useParams 추가
+import { useParams } from "react-router-dom"; // useParams 추가
 import DetailTable from "../components/DetailTable";
 import Nav from "../components/Nav";
 import "../styles/App.css";

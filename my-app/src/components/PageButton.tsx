@@ -1,3 +1,5 @@
+import usePageStore from "../datas/page";
+
 interface Props {
   buttonIdx: number;
   onClick: any;
